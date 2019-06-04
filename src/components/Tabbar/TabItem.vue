@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     change() {
-        console.log(this)
+        // console.log(this)
       //让父组件去更改自身的数据sel
       //this.changeSelected(this.mark);
       //this.$emit("changeSelected",this.mark)

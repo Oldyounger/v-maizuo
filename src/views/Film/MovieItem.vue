@@ -1,55 +1,54 @@
 <template>
-    <div class="movieItem">
+     <div class="movieItem">
         <div class="img-box">
-            <img v-lazy="getImages(movie.cover)" alt="">
+            <img v-lazy="getImage(movie.cover)" alt="">
         </div>
         <div class="info" >
             <div class="info-left">
                 <div class="title">电影：{{movie.title}}</div>
-                <div class="count">想看的人：{{movie.cover_y | filterData}}</div>
+                <div class="count">想看的人：{{movie.cover_y | filtersData}}</div>
             </div>
             <div class="info-right">
                 
                 <div class="rating">电影评分：{{movie.rate}}分</div>
             </div>
         </div>
-       
     </div>
 </template>
+
 <script>
 export default {
-    props:
-        {movie:Object},
-        
-    
-     methods:{
-         getImages( _url ){
-            if( _url !== undefined ){
-                let _u = _url.substring( 7 );
-                return 'https://images.weserv.nl/?url=' + _u;
+    props:{
+        movie:Object
+        },
+    methods:{
+       getImage(url){
+            // 把现在的图片连接传进来，返回一个不受限制的路径
+            if(url !== undefined){
+                return url.replace(/^(http)[s]*(\:\/\/)/,'https://images.weserv.nl/?url=');
             }
         }
     },
     filters:{
-        filterData(data){
-           if(data > 10000){
-               data = (data / 10000).toFixed(2) + "万";
-           }
-           return data
+        filtersData(data){
+            if(data>10000){
+                data = (data/10000);
+                data = data.toFixed(1);
+                data += "w"
+            }
+            return data;
         }
     }
+
 }
 </script>
+
 <style lang="scss" scoped>
-    .movieItem{
-        display:flex;
+    .movieitem{
         margin:14px;
-        background:#fff;
-        width:100%;
-       height:1.4rem;
         .img-box{
-            width:30%;
-            height:100%;
+            width:100%;
+            height:2.2rem;
             img{
                 width:100%;
                 height:100%;
@@ -57,23 +56,22 @@ export default {
         }
         .info{
             display:flex;
-            flex-direction: column;
-            padding:.1rem .2rem;
-            line-height:.30rem;
+            justify-content: space-between;
+            padding:0.1rem 0.2rem;
             .title{
                 font-size:18px;
-                font-weight: bold;
-                color:rgb(247, 79, 28);
-                
+                color:#5f4949;
+                font-weight:900;
+                padding-bottom: 5px;
             }
             .rating{
-                padding-top:4px;
+                padding-top:10px;
                 color:orange;
-                font-size:13px;
-                font-weight: bold;
-
+                font-size:16px;
+                font-weight:900;
             }
         }
     }
-       
 </style>
+
+

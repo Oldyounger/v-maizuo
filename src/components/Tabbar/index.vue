@@ -44,21 +44,20 @@ export default {
         {id:2,txt:"影院",mark:"cinema",normalImg:require("../../assets/ic_tab_audio_normal.png"),activeImg:require("../../assets/ic_tab_audio_active.png")},
         {id:3,txt:"特惠",mark:"preference",normalImg:require("../../assets/ic_tab_broadcast_normal.png"),activeImg:require("../../assets/ic_tab_broadcast_active.png")},
         {id:4,txt:"我的",mark:"mine",normalImg:require("../../assets/ic_tab_mine_normal.png"),activeImg:require("../../assets/ic_tab_mine_active.png")},
-        /* {id:5,txt:"我的",mark:"mine",normalImg:require("../../assets/ic_tab_mine_normal.png"),activeImg:require("../../assets/ic_tab_mine_active.png")} */
       ]
     };
   },
-  methods: {
-    changeSelected(val) {
-      this.selected = val;
-    }
-  },
+  // methods: {
+  //   changeSelected(val) {
+  //     this.selected = val;
+  //   }
+  // },
   components: {
     TabItem
   }
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .tabbar {
   position: fixed;
   bottom: 0;

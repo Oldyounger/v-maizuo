@@ -54,6 +54,7 @@ export default {
 <style lang="scss" >
     .swiper-container{
         height:2.4rem;
+        padding-top:60px;
         img{
             width:100%;
             height:100%;
