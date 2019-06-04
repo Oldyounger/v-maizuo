@@ -1,17 +1,21 @@
 <template>
     <div class="home">
-        Audio
+        <Header></Header>
+        <ContentItem></ContentItem>
         <Tabbar></Tabbar>
     </div>
 </template>
 <script>
+import Header from "./header.vue"
 import Tabbar from "@/components/Tabbar"
+import ContentItem from "./content"
 export default {
     components:{
-        Tabbar
+        Tabbar,Header,ContentItem
     }
 }
 </script>
-<style>
-
+<style lang="scss" scoped>
+    
 </style>
+
