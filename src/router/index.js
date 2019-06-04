@@ -2,15 +2,14 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 Vue.use(Router)
-import home from "./home"
-import audio from "./audio"
-import broadcast from "./broadcast"
-import group from "./group"
+import film from "./film"
+import cinema from "./cinema"
+import preference from "./preference"
 import mine from "./mine"
 export default new Router({
   routes: [
-    {path:"/",redirect:"/home"},
-    home,audio,mine,group,broadcast,
+    {path:"/",redirect:"/film"},
+    film,cinema,mine,preference,
     {path:"/notfound",component:()=>import("@/views/NotFound")},
     {path:"*",redirect:"/notfound"}
   ]
