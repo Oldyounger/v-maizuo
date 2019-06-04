@@ -6,9 +6,9 @@
     </div>
 </template>
 <script>
-import Header from "./header.vue"
-import Tabbar from "@/components/Tabbar"
-import ContentItem from "./content"
+import Header from "./header.vue";
+import Tabbar from "@/components/Tabbar";
+import ContentItem from "./content";
 export default {
     components:{
         Tabbar,Header,ContentItem

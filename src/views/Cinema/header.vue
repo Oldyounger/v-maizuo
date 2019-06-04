@@ -41,11 +41,13 @@ export default {};
   justify-content: space-around;
   align-items: center;
   position: fixed;
+  z-index:10;
   top: 50px;
   left: 0;
   width: 100%;
   height: 50px;
-  color:rgb(85, 85, 85);      
+  color:rgb(85, 85, 85);   
+  background:#fff;   
   div {
     width:33%;
     text-align:center;
