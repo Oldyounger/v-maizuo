@@ -1,18 +1,19 @@
 <template>
     <div class="content-item">
-      <ul 
-     
+      <router-link  
+        tag="ul"
+        to="/cinemadetail"
       >
           <div class="left">
-              <div class="space">{{item.title}}</div>
-              <div>{{item.title}} </div>
+              <div class="space">{{item.name}}</div>
+              <div>{{item.local}} </div>
           </div>
           <div class="right">
-              <div class="price space">￥ {{item.rate}} 起</div>
+              <div class="price space">￥ {{item.price}} 起</div>
               <div class="right-last">距离未知</div>
           </div>
-      </ul>
-    </div>
+      </router-link >
+    </div>  
 </template>
 
 <script>
