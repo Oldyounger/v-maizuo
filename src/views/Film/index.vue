@@ -31,12 +31,12 @@ export default {
     name:"home",
     data(){
         return{
-            type:"nav",
+            type:"home/list",
             isFixed:false,
             homeTop:0,
             navs:[
-                {id:1,title:"正在热映",type:"nav"},
-                {id:2,title:"即将上映",type:"home/list"}
+                {id:1,title:"正在热映",type:"home/list"},
+                {id:2,title:"即将上映",type:"home/cominglist"}
             ]
         }
     },

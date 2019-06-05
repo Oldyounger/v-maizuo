@@ -1,16 +1,16 @@
 <template>
      <div class="movieItem">
         <div class="img-box">
-            <img v-lazy="getImage(movie.cover)" alt="">
+            <!-- <img v-lazy="getImage(movie.img)" alt=""> -->
         </div>
         <div class="info" >
             <div class="info-left">
-                <div class="title">电影：{{movie.title}}</div>
-                <div class="count">想看的人：{{movie.cover_y | filtersData}}</div>
+                <div class="title">电影：{{movie.nm}}</div>
+                <div class="count">想看的人：{{movie.wish | filtersData}}</div>
             </div>
             <div class="info-right">
                 
-                <div class="rating">电影评分：{{movie.rate}}分</div>
+                <div class="rating">电影评分：{{movie.sc}}分</div>
             </div>
         </div>
     </div>
@@ -46,9 +46,11 @@ export default {
 <style lang="scss" scoped>
     .movieitem{
         margin:14px;
+        width: 100%;
+        height:0.5rem;
         .img-box{
             width:100%;
-            height:2.2rem;
+            height:10px;;
             img{
                 width:100%;
                 height:100%;
