@@ -1,6 +1,7 @@
 <template>
     <div class="moviedetail">
-        <div>
+        <div v-if="!movie"></div>
+        <div v-else>
             <div class="img-box">
                 <img :src="getImages(movie.img)" alt="">
             </div>
@@ -28,7 +29,7 @@ export default {
         getImages,
         getMovie(){
             this.$http.get("/api/sk/home/details/"+this.$route.params.id).then(res=>{
-                console.log(res.data)
+                // console.log(res.data)
                 this.movie = res.data
             })
         }

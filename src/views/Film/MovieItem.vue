@@ -13,7 +13,10 @@
             </div>
             <div class="info-right">
                 <div class="rating">电影评分：{{movie.sc}}分</div>
-                <div class="button">购票</div>
+                <router-link 
+                class="button"
+                to="/cinema"
+                >购票</router-link>
             </div>
         </div>
     </router-link>

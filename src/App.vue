@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <keep-alive include="film"> 
+    <keep-alive include="home"> 
       <router-view></router-view>
     </keep-alive>
   </div>
@@ -14,7 +14,7 @@ export default {
    
   },
   created(){
-    this.$router.push("/")
+    // this.$router.push("/")
   }
 };
 </script>
