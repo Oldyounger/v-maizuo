@@ -6,7 +6,7 @@
             v-for="banner in banners"
             :key="banner.id"
             >
-                <img width="100%" :src="getImages(banner.cover)" alt="">
+                <img width="100%" :src="getImages(banner.img)" alt="">
             </div>
         </div>
         <div class="swiper-pagination"></div>
@@ -29,16 +29,17 @@ export default {
         }
     },
     created(){ //vue.prototype.$http = axios
-        this.$http.get("/api/sk/nav",{
+        this.$http.get("/api/sk/home/list",{
             params:{
                 limit:6
             }
         }).then(res=>{
-            //console.log(res)
+            // console.log(res)
            this.banners = res.data.data.object_list;//必须要等到数据改变 引发新的真实dom渲染完成后才会执行的操作
            this.$nextTick(()=>{
                new Swiper(".home-banner",{
                loop:true,
+               autoplay:true,
                pagination:{
                    el:".swiper-pagination"
                }

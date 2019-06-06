@@ -15,6 +15,7 @@
 </template>
 
 <script>
+// import {mapAction} from "vuex"
 import MovieItem from "./MovieItem"
 import {Toast} from "mint-ui";
 export default {
@@ -43,6 +44,7 @@ export default {
         this.loading = true;
     },
     methods:{
+        // ...mapAction(["addGoodInCar"]),
         loadMore(){
             if(!this.hasMore){
                 //没有更多数据了
@@ -72,8 +74,9 @@ export default {
                     page
                 }
             }).then(res=>{
+                // console.log(this.$route)
                 //this.movies = this.movies.concat(res.data.object_list);
-                this.movies = res.data.data.object_list
+                this.movies = this.movies.concat(res.data.data.object_list);
                 this.loading = false//继续开启无限滚动
                 instance.close();//关闭加载框
                 if(this.limit*this.page >= res.data.data.total){//没有更多数据了

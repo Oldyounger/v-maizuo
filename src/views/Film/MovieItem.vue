@@ -1,7 +1,10 @@
 <template>
-     <div class="movieItem">
+     <router-link 
+        tag="div"
+        class="movieItem"
+        :to="{name:'moviedetail',params:{id:movie.id}}">
         <div class="img-box">
-            <!-- <img v-lazy="getImage(movie.img)" alt=""> -->
+            <img v-lazy="getImage(movie.img)" alt="">
         </div>
         <div class="info" >
             <div class="info-left">
@@ -9,11 +12,11 @@
                 <div class="count">想看的人：{{movie.wish | filtersData}}</div>
             </div>
             <div class="info-right">
-                
                 <div class="rating">电影评分：{{movie.sc}}分</div>
+                <div class="button">购票</div>
             </div>
         </div>
-    </div>
+    </router-link>
 </template>
 
 <script>
@@ -43,34 +46,49 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-    .movieitem{
+<style lang="scss"  >
+    .movieItem{
         margin:14px;
-        width: 100%;
-        height:0.5rem;
+        display: flex;
+        justify-content: space-between;
         .img-box{
-            width:100%;
-            height:10px;;
+            width:30%;
+            height:100%;
             img{
                 width:100%;
                 height:100%;
             }
         }
         .info{
-            display:flex;
-            justify-content: space-between;
-            padding:0.1rem 0.2rem;
+            // display:flex;
+            // justify-content: space-between;
+            width: 70%;
+            height: 100%;
+            padding:0.1rem 0.1rem;
+            position: relative;
             .title{
                 font-size:18px;
                 color:#5f4949;
                 font-weight:900;
                 padding-bottom: 5px;
+                width:80%;
             }
             .rating{
                 padding-top:10px;
                 color:orange;
                 font-size:16px;
                 font-weight:900;
+            }
+            .button{
+                width:60px;
+                height: 30px;
+                border:1px solid orange;
+                color:orange;
+                text-align: center;
+                line-height: 30px;
+                position: absolute;
+                bottom:27px;
+                right:0px;
             }
         }
     }

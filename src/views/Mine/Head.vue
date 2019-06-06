@@ -10,14 +10,14 @@
         </router-link>
         
         <div class="mine-title">
-            <div class="left">
+            <router-link tag="div" to="/list" class="left">
                 <i class ="fa fa-ticket"></i>
                 <p class ="movies-order">电影订单</p>
-            </div>
-            <div class="right">
+            </router-link>
+            <router-link tag="div" to="/moviecar" class="right">
                 <i class ="fa fa-reorder (alias)"></i>
                 <p class ="goods-order">商品订单</p>
-            </div>
+            </router-link>
         </div>
 
         <div class="bodyBox">
@@ -153,5 +153,8 @@ export default {
                 align-items:center;
              }
         }
+    }
+    .movies-order,.goods-order{
+        font-size: 14px;
     }
 </style>
