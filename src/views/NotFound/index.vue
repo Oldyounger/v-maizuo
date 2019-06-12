@@ -1,7 +1,7 @@
 <template>
     <div class="notfound">
         Not Found 404  !!!
-        <router-link to="/film">回到首页</router-link>
+        <router-link to="/film" tag="div" class="not-foud">回到首页</router-link>
     </div>
 </template>
 
@@ -23,6 +23,19 @@ export default {
         font-weight:900;
         .router-link-active{
             font-weight:900;
+        }
+        .not-foud{
+            width:100px;
+            height:40px;
+            border:1px solid #ff5f16;
+            background:#ff5f16;
+            color:#fff;
+            font-size:16px;
+            font-weight:300;
+            text-align: center;
+            line-height:40px;
+            border-radius: 10px;
+            margin-top:50px;
         }
     }
 </style>

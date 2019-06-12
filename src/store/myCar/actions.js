@@ -6,6 +6,8 @@ export default {
         store.commit(SYNC_UPDATE,cars)
     },
     addGoodInCar(store,goodInfo){//添加商品到购物车
+        alert("成功加入购物车！")
+        
         setTimeout(()=>{
             //获取后台返回来的购物车
             let cars = getCar();//[{}]
